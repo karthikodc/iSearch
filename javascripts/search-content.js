@@ -8,9 +8,16 @@ var feedbackText = "";
 // On-view-load initialization
 function init() {
       $("#search").click(search);
+			$("#notHelpful").click(postQuestion);
       gadgets.window.adjustHeight();
 }
 
+
+function postQuestion () {
+	$('#search-info').hide();
+	$('#content').hide();
+	$('#postQuestionForm').show();
+}
 
 //onhover event of expand icon
 $("span.image-button").live('mouseover', function () {
@@ -220,6 +227,7 @@ function expandDiscussion(id){
 					discussionMessage +=rootmessage;
 					discussionMessage +=correctanswer;
 					discussionMessage +=helpfulanswer;
+					discussionMessage += feedbackText; 
 					console.log("Html Content:: "+discussionMessage);
 					$(".content").show();
 					$(".content").html(discussionMessage);
@@ -279,6 +287,7 @@ function expandDocument(id){
 					documentdata += '<span class="subtext">This document contains an uploaded document (PDF/DOC). ';
 					documentdata += 'Please click <a target="_app" href="'+response.data.resources.html.ref+'">here</a> to open the document</span></div>';
 					documentdata +='</div>';
+					documentdata += feedbackText; 
 				  }
 				  else
 				  {
@@ -294,7 +303,7 @@ function expandDocument(id){
 					documentdata +='</div>';					
 					documentdata +='<div class="answerborder">';
 					documentdata +='<span class="root">'+response.data.content.text +'</span></div>';				
-                                        
+          documentdata += feedbackText;                         
 				  }
 			    }
 			    $(".content").show();
@@ -764,7 +773,7 @@ function search() {
 							post +='</div>';  
 							post +='</div>';  
 							//post +='<br>';		
-							loop_check_blog=loop_check_blog+1							
+							loop_check_blog=loop_check_blog+1;							
 							             
 					}
 					
@@ -782,8 +791,8 @@ function search() {
 			//all +="<br>"+post;
 			all +='<br><div class="pagingControls">Page:'+paginate_all+'</div>';
 
-			feedbackText = '<button id="notHelpful">Not Helpful</button>&nbsp;&nbsp;&nbsp;';
-			feedbackText+= '<button id="helpful">Helpful</button>';
+			feedbackText = '&nbsp;&nbsp;&nbsp;<button id="notHelpful">Not Helpful</button>&nbsp;&nbsp;&nbsp;';
+			// feedbackText+= '<button id="helpful">Helpful</button>';
 
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
