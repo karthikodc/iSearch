@@ -5,12 +5,29 @@
 <head>
 	<link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="stylesheets/Tab.css" type="text/css" media="screen" />
-	<link type="text/css" href="stylesheets/custom-theme/jive-elements.css" rel="stylesheet"/>
-	<link type="text/css" href="stylesheets/custom-theme/jive-icons.css" rel="stylesheet"/>
-	<link type="text/css" href="stylesheets/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet"/>
+	<link type="text/css" href="stylesheets/custom-theme/jive-elements.css" rel="stylesheet" media="screen"/>
+	<link type="text/css" href="stylesheets/custom-theme/jive-icons.css" rel="stylesheet" media="screen"/>
+	<link type="text/css" href="stylesheets/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" media="screen"/>
 </head>
 
 <body>
+<form id="search-form">
+	<table class="j-table">
+		<thead>
+			<tr><th>Please enter your question</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="text" id="query" size="66"/></td>
+			</tr>
+			<tr>
+				<td><button id="search" type="Submit">Search</button></td>
+			</tr>		
+		</tbody>
+	</table>
+</form>
+
+<!--
 <h3 align="center">Search </h3>
 <table align="center">
  <tr>
@@ -22,7 +39,7 @@
   </td>
  </tr>
 </table>
-
+-->
 
 <div id="search-info" style="display: none">
 
