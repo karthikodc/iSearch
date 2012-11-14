@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-    <ModulePrefs title="Search Jive Content"
+    <ModulePrefs title="Village Help Tool"
                 author="Jive Software"
-           description="Exercise content search capabilities of Jive Core API."
+           description="Village Help Tool for ACE Global Village"
                 height="400">
         <Require feature="dynamic-height"/>
         <Require feature="jive-core-v2"/>
