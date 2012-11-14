@@ -1,8 +1,9 @@
-
 var total_page_discussion =0;
 var total_page_document =0;
 var total_page_blog =0;
 var total_page_all =0;
+
+var feedbackText = "";
 
 // On-view-load initialization
 function init() {
@@ -337,6 +338,7 @@ function expandBlog(blogId, blogpostId){
 					  blogdata +='</div>';							
 					  blogdata +='<div class="answerborder">';
 					  blogdata +='<span class="root">'+response.data.content.text +'</span></div>';	
+						blogdata += feedbackText;
 					}
 					  $(".content").show();
 					  $(".content").html(blogdata);
@@ -779,6 +781,10 @@ function search() {
 			//all +="<br>"+document;
 			//all +="<br>"+post;
 			all +='<br><div class="pagingControls">Page:'+paginate_all+'</div>';
+
+			feedbackText = '<button id="notHelpful">Not Helpful</button>&nbsp;&nbsp;&nbsp;';
+			feedbackText+= '<button id="helpful">Helpful</button>';
+
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
