@@ -7,27 +7,44 @@ var feedbackText = "";
 
 // On-view-load initialization
 function init() {
-    $("#search").click(search);
-	//$("#notHelpful").click(postQuestion);
-     gadgets.window.adjustHeight();
+      $("#search").click(search);
+	$("#notHelpful").click(postQuestion);
+      gadgets.window.adjustHeight();
 }
 
-$(document).ready(function() {
-        $("#notHelpful").click(function() {
-        console.log("Hello i'm in helpful section");
-		$('#search-info').hide();
-		$('.content').hide();
-		$('#postQuestionForm').show();
-        });
-    });
 
-/*function postQuestion () {
+function postQuestion () {
 console.log("Hello i'm in helpful section");
 	$('#search-info').hide();
 	$('.content').hide();
 	$('#postQuestionForm').show();
-}*/
+}
 
+function pageselectCallback(page_index, jq){
+                var new_content = jQuery('#hiddenresult div.firstdiv:eq('+page_index+')').clone();
+                $('#Searchresult').empty().append(new_content);
+                return false;
+}
+
+/** 
+ * Initialisation function for pagination
+ */
+function initPagination() {
+	// count entries inside the hidden content
+	var num_entries = jQuery('#hiddenresult div.firstdiv').length;
+	console.log("Paginate demo num_entries:::"+num_entries);
+	// Create content inside pagination element
+	$("#Pagination").pagination(num_entries, {
+		callback: pageselectCallback,
+		items_per_page:5 // Show only one item per page
+	});
+ }
+
+// When document is ready, initialize pagination
+$(document).ready(function(){      
+	initPagination();
+});
+	
 //onhover event of expand icon
 $("span.image-button").live('mouseover', function () {
                 var curRowId = $(this).attr("id");
@@ -103,13 +120,13 @@ $("span.image-button").live('mouseover', function () {
 
  });
     
-/*$(document).ready(function() {
+$(document).ready(function() {
 
     $('ul.tablist li').click(function(e) {
 		$('.firstdiv').css('background-color', '#FFFFFF');
         $(".content").hide();
     });
-});*/
+});
  //function for tabs   
  $(function() {
          $( "#tabs" ).tabs();
@@ -651,7 +668,7 @@ function search() {
 								var page="page_discussion_"+intial_discussion;
 								console.log(page);
 								console.log(paginate_discussion);
-								
+								 discussion +='<div id="hiddenresult" style="display:none;">';
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
 								discussion +='<div class="div_'+page+'" style="'+display_discussion+'">';								
 								  discussion +='<ul>';			
@@ -674,6 +691,7 @@ function search() {
                    		        discussion +='<div class="align">'+contentSummary+'</div>';                  
                     	        discussion +='</ul>';
 								discussion +='</div>';				                
+								discussion +='</div>';
 								discussion +='</div>';
 								discussion +='</div>';
 								//discussion +='<br>';
@@ -806,7 +824,7 @@ function search() {
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
-			discussion +='<br><div class="pagingControls">Page:'+paginate_discussion+'</div>';
+			//discussion +='<br><div class="pagingControls">Page:'+paginate_discussion+'</div>';
 			
 			$("#tabs-2").html(discussion);
 			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';

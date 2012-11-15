@@ -4,7 +4,7 @@
  * This plugin needs at least jQuery 1.4.2
  *
  * @author Gabriel Birke (birke *at* d-scribe *dot* de)
- * @version 2.1
+ * @version 2.2
  * @param {int} maxentries Number of entries to paginate
  * @param {Object} opts Several options (see README for documentation)
  * @return {Object} jQuery Object
@@ -101,7 +101,7 @@
 				this.appendRange(fragment, current_page, 0, end, {classes:'sp'});
 				if(this.opts.num_edge_entries < interval.start && this.opts.ellipse_text)
 				{
-					jQuery("<span>"+this.opts.ellipse_text+"</span>").appendTo(fragment);
+					$("<span>"+this.opts.ellipse_text+"</span>").appendTo(fragment);
 				}
 			}
 			// Generate interval links
@@ -111,7 +111,7 @@
 			{
 				if(np-this.opts.num_edge_entries > interval.end && this.opts.ellipse_text)
 				{
-					jQuery("<span>"+this.opts.ellipse_text+"</span>").appendTo(fragment);
+					$("<span>"+this.opts.ellipse_text+"</span>").appendTo(fragment);
 				}
 				begin = Math.max(np-this.opts.num_edge_entries, interval.end);
 				this.appendRange(fragment, current_page, begin, np, {classes:'ep'});
@@ -130,7 +130,7 @@
 	$.fn.pagination = function(maxentries, opts){
 		
 		// Initialize options with default values
-		opts = jQuery.extend({
+		opts = $.extend({
 			items_per_page:10,
 			num_display_entries:11,
 			current_page:0,
@@ -142,6 +142,8 @@
 			prev_show_always:true,
 			next_show_always:true,
 			renderer:"defaultRenderer",
+			show_if_single_page:false,
+			load_first_page:true,
 			callback:function(){return false;}
 		},opts||{});
 		
@@ -182,7 +184,7 @@
 		// -----------------------------------
 		// Initialize containers
 		// -----------------------------------
-		current_page = opts.current_page;
+                current_page = parseInt(opts.current_page);
 		containers.data('current_page', current_page);
 		// Create a sane value for maxentries and items_per_page
 		maxentries = (!maxentries || maxentries < 0)?1:maxentries;
@@ -220,9 +222,13 @@
 		// When all initialisation is done, draw the links
 		links = renderer.getLinks(current_page, paginationClickHandler);
 		containers.empty();
-		links.appendTo(containers);
+		if(np > 1 || opts.show_if_single_page) {
+			links.appendTo(containers);
+		}
 		// call callback function
-		opts.callback(current_page, containers);
+		if(opts.load_first_page) {
+			opts.callback(current_page, containers);
+		}
 	} // End of $.fn.pagination block
 	
 })(jQuery);
