@@ -12,14 +12,7 @@ function init() {
      gadgets.window.adjustHeight();
 }
 
-$(document).ready(function() {
-        $("#notHelpful").click(function() {
-        console.log("Hello i'm in helpful section");
-		$('#search-info').hide();
-		$('.content').hide();
-		$('#postQuestionForm').show();
-        });
-    });
+
 
 /*function postQuestion () {
 console.log("Hello i'm in helpful section");
@@ -109,6 +102,13 @@ $(document).ready(function() {
 		$('.firstdiv').css('background-color', '#FFFFFF');
         $(".content").hide();
     });
+	
+	$("#notHelpful").click(function() {
+        console.log("Hello i'm in helpful section");
+		$('#search-info').hide();
+		$('.content').hide();
+		$('#postQuestionForm').show();
+        });
 });
  //function for tabs   
  $(function() {
