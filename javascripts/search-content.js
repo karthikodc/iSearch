@@ -12,7 +12,14 @@ function init() {
      gadgets.window.adjustHeight();
 }
 
-
+$(document).ready(function() {
+        $("#notHelpful").click(function() {
+        console.log("Hello i'm in helpful section");
+		$('#search-info').hide();
+		$('.content').hide();
+		$('#postQuestionForm').show();
+        });
+    });
 
 /*function postQuestion () {
 console.log("Hello i'm in helpful section");
@@ -96,20 +103,13 @@ $("span.image-button").live('mouseover', function () {
 
  });
     
-$(document).ready(function() {
+/*$(document).ready(function() {
 
     $('ul.tablist li').click(function(e) {
 		$('.firstdiv').css('background-color', '#FFFFFF');
-        $('.content').hide();
+        $(".content").hide();
     });
-	
-	$('#notHelpful').click(function() {
-        console.log('Hello i'm in helpful section');
-		$('#search-info').hide();
-		$('.content').hide();
-		$('#postQuestionForm').show();
-        });
-});
+});*/
  //function for tabs   
  $(function() {
          $( "#tabs" ).tabs();
