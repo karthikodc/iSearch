@@ -41,10 +41,7 @@ function initPagination() {
  }
 
 // When document is ready, initialize pagination
-$(document).ready(function(){      
-	initPagination();
-});
-	
+
 //onhover event of expand icon
 $("span.image-button").live('mouseover', function () {
                 var curRowId = $(this).attr("id");
@@ -130,7 +127,7 @@ $(document).ready(function() {
  //function for tabs   
  $(function() {
          $( "#tabs" ).tabs();
-        
+        initPagination();
  });
 
 //function for date format
