@@ -7,11 +7,14 @@ var feedbackText = "";
 
 // On-view-load initialization
 function init() {
-      $("#search").click(search);
-			$("#notHelpful").click(postQuestion);
-      gadgets.window.adjustHeight();
+    $("#search").click(search);
+	$("#notHelpful").click(postQuestion);
+    gadgets.window.adjustHeight();
 }
 
+$("#notHelpful").click(function() {
+  alert("Handler for .click() called.");
+});
 
 function postQuestion () {
 console.log("Hello i'm in helpful section");
