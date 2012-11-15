@@ -840,7 +840,8 @@ function search() {
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
 			//discussion +='<br><div class="pagingControls">Page:'+paginate_discussion+'</div>';
-			
+			discussion +='<div id="Pagination"></div>';
+			discussion +='<br style="clear:both;" />';
 			$("#Searchresult").html(discussion);
 			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
