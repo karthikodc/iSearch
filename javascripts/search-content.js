@@ -9,6 +9,7 @@ var feedbackText = "";
 function init() {
       $("#search").click(search);
 	$("#notHelpful").click(postQuestion);
+	initPagination();
       gadgets.window.adjustHeight();
 }
 
