@@ -20,28 +20,6 @@ console.log("Hello i'm in helpful section");
 	$('#postQuestionForm').show();
 }
 
-function pageselectCallback(page_index, jq){
-                var new_content = jQuery('#hiddenresult div.firstdiv:eq('+page_index+')').clone();
-                $('#Searchresult').empty().append(new_content);
-                return false;
-}
-
-/** 
- * Initialisation function for pagination
- */
-function initPagination() {
-	// count entries inside the hidden content
-	var num_entries = jQuery('#hiddenresult div.firstdiv').length;
-	console.log("Paginate demo num_entries:::"+num_entries);
-	// Create content inside pagination element
-	$("#Pagination").pagination(num_entries, {
-		callback: pageselectCallback,
-		items_per_page:5 // Show only one item per page
-	});
- }
-
-// When document is ready, initialize pagination
-
 //onhover event of expand icon
 $("span.image-button").live('mouseover', function () {
                 var curRowId = $(this).attr("id");
@@ -123,7 +101,7 @@ $(document).ready(function() {
 		$('.firstdiv').css('background-color', '#FFFFFF');
         $(".content").hide();
     });
-	initPagination();
+	
 });
  //function for tabs   
  $(function() {
