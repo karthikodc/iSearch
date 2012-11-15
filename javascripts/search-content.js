@@ -123,11 +123,12 @@ $(document).ready(function() {
 		$('.firstdiv').css('background-color', '#FFFFFF');
         $(".content").hide();
     });
+	initPagination();
 });
  //function for tabs   
  $(function() {
          $( "#tabs" ).tabs();
-        initPagination();
+        
  });
 
 //function for date format
