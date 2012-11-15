@@ -100,11 +100,11 @@ $(document).ready(function() {
 
     $('ul.tablist li').click(function(e) {
 		$('.firstdiv').css('background-color', '#FFFFFF');
-        $(".content").hide();
+        $('.content').hide();
     });
 	
-	$("#notHelpful").click(function() {
-        console.log("Hello i'm in helpful section");
+	$('#notHelpful').click(function() {
+        console.log('Hello i'm in helpful section');
 		$('#search-info').hide();
 		$('.content').hide();
 		$('#postQuestionForm').show();
