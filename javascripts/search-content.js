@@ -14,6 +14,7 @@ function init() {
 
 
 function postQuestion () {
+console.log("Hello i'm in helpful section");
 	$('#search-info').hide();
 	$('.content').hide();
 	$('#postQuestionForm').show();
