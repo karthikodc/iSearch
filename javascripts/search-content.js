@@ -485,6 +485,7 @@ function search() {
 			var paginate_all='<li><a href="#" onclick="showPage(1,\'all\'); return false;">1</a></li>';
 			var typeImage="";
 			var mainId="";
+			discussion +='<div id="hiddenresult" style="display:none;">';
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -645,7 +646,7 @@ function search() {
 								var page="page_discussion_"+intial_discussion;
 								console.log(page);
 								console.log(paginate_discussion);
-								 discussion +='<div id="hiddenresult" style="display:none;">';
+								 
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
 								discussion +='<div class="div_'+page+'" style="'+display_discussion+'">';								
 								  discussion +='<ul>';			
