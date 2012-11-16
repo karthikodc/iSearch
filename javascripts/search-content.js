@@ -831,10 +831,8 @@ function search() {
 			//discussion +='<div id="Pagination"></div>';
 			//discussion +='<br style="clear:both;" />';
 			$("#Searchresult").html(discussion);
-			// When document is ready, initialize pagination
-			$(document).ready(function(){      
-				initPagination();
-			});
+			
+			
 			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-3").html(document);
@@ -844,6 +842,10 @@ function search() {
 			gadgets.window.adjustHeight();
         }
     });
+	// When document is ready, initialize pagination
+	$(document).ready(function(){      
+				initPagination();
+			});
 }
     
 
