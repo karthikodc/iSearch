@@ -41,10 +41,7 @@ function initPagination() {
 	});
  }
 
-// When document is ready, initialize pagination
-$(document).ready(function(){      
-	initPagination();
-});
+
 function postQuestion () {
 console.log("Hello i'm in helpful section");
 	$('#search-info').hide();
@@ -834,6 +831,10 @@ function search() {
 			//discussion +='<div id="Pagination"></div>';
 			//discussion +='<br style="clear:both;" />';
 			$("#Searchresult").html(discussion);
+			// When document is ready, initialize pagination
+			$(document).ready(function(){      
+				initPagination();
+			});
 			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-3").html(document);
