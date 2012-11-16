@@ -65,7 +65,18 @@
 .jive-icon-discussion-question {
      background-position: -80px -16px;
 }
-
+.jive-icon-discussion-pervious {
+     background-position: -80px -1374px;
+}
+.jive-icon-discussion-pervious-disabled {
+     background-position: -96px -13746px;
+}
+.jive-icon-discussion-next {
+     background-position: -49px -1374px;
+}
+.jive-icon-discussion-next-disabled {
+     background-position: -64px -1374px;
+}
 .jive-icon-discussion-correct {
      background-position: -208px -16px;
 }
