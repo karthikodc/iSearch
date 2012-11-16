@@ -8,44 +8,14 @@ var feedbackText = "";
 // On-view-load initialization
 function init() {
       $("#search").click(search);
-	$("#notHelpful").click(postQuestion);
-	
+			$("#notHelpful").click(postQuestion);
       gadgets.window.adjustHeight();
 }
 
-/**
- * Callback function that displays the content.
- *
- * Gets called every time the user clicks on a pagination link.
- *
- * @param {int} page_index New Page index
- * @param {jQuery} jq the container with the pagination links as a jQuery object
- */
-function pageselectCallback(page_index, jq){
-	var new_content = jQuery('#hiddenresult div.firstdiv:eq('+page_index+')').clone();
-	$('#Searchresult').empty().append(new_content);
-	return false;
-}
-
-/** 
- * Initialisation function for pagination
- */
-function initPagination() {
-	// count entries inside the hidden content
-	var num_entries = jQuery('#hiddenresult div.firstdiv').length;
-	console.log("num_entries::"+num_entries);
-	// Create content inside pagination element
-	$("#Pagination").pagination(num_entries, {
-		callback: pageselectCallback,
-		items_per_page:3 // Show only one item per page
-	});
- }
-
 
 function postQuestion () {
-console.log("Hello i'm in helpful section");
 	$('#search-info').hide();
-	$('.content').hide();
+	$('#content').hide();
 	$('#postQuestionForm').show();
 }
 
@@ -130,7 +100,6 @@ $(document).ready(function() {
 		$('.firstdiv').css('background-color', '#FFFFFF');
         $(".content").hide();
     });
-	
 });
  //function for tabs   
  $(function() {
@@ -439,6 +408,9 @@ var totalPage=total_page_all;
 	
 }
 
+
+
+
 // Perform a search and display the results
 function search() {
     
@@ -510,7 +482,6 @@ function search() {
 			var paginate_all='<li><a href="#" onclick="showPage(1,\'all\'); return false;">1</a></li>';
 			var typeImage="";
 			var mainId="";
-			discussion +='<div id="hiddenresult" style="display:none;">';
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -660,7 +631,7 @@ function search() {
 									console.log("Inside If value ");
 									
 									intial_discussion=intial_discussion+1;
-									//display_discussion="display:none";
+									display_discussion="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
 									paginate_discussion += '<li><a href="#" onclick=showPage("'+ intial_discussion + '","discussion"); return false;>' + intial_discussion + '</a></li>';
 								}
@@ -671,7 +642,7 @@ function search() {
 								var page="page_discussion_"+intial_discussion;
 								console.log(page);
 								console.log(paginate_discussion);
-								 
+								
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
 								discussion +='<div class="div_'+page+'" style="'+display_discussion+'">';								
 								  discussion +='<ul>';			
@@ -694,7 +665,6 @@ function search() {
                    		        discussion +='<div class="align">'+contentSummary+'</div>';                  
                     	        discussion +='</ul>';
 								discussion +='</div>';				                
-								discussion +='</div>';
 								discussion +='</div>';
 								discussion +='</div>';
 								//discussion +='<br>';
@@ -827,12 +797,9 @@ function search() {
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
-			//discussion +='<br><div class="pagingControls">Page:'+paginate_discussion+'</div>';
-			//discussion +='<div id="Pagination"></div>';
-			//discussion +='<br style="clear:both;" />';
-			$("#Searchresult").html(discussion);
+			discussion +='<br><div class="pagingControls">Page:'+paginate_discussion+'</div>';
 			
-			
+			$("#tabs-2").html(discussion);
 			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-3").html(document);
@@ -841,12 +808,7 @@ function search() {
             $("#search-info").show();
 			gadgets.window.adjustHeight();
         }
-		// When document is ready, initialize pagination
-		$(document).ready(function(){      
-					initPagination();
-				});
     });
-	
 }
     
 
