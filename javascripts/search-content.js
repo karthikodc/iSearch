@@ -841,11 +841,12 @@ function search() {
             $("#search-info").show();
 			gadgets.window.adjustHeight();
         }
+		// When document is ready, initialize pagination
+		$(document).ready(function(){      
+					initPagination();
+				});
     });
-	// When document is ready, initialize pagination
-	$(document).ready(function(){      
-				initPagination();
-			});
+	
 }
     
 
