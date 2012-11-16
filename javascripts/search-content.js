@@ -438,10 +438,11 @@ function pageselectCallback(page_index, jq){
 function initPagination() {
 	// count entries inside the hidden content
 	var num_entries = jQuery('#hiddenresult div.firstdiv').length;
+	console.log("num_entries::"+num_entries);
 	// Create content inside pagination element
 	$("#Pagination").pagination(num_entries, {
 		callback: pageselectCallback,
-		items_per_page:2 // Show only one item per page
+		items_per_page:3 // Show only one item per page
 	});
  }
 
