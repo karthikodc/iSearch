@@ -660,7 +660,7 @@ function search() {
 									console.log("Inside If value ");
 									
 									intial_discussion=intial_discussion+1;
-									display_discussion="display:none";
+									//display_discussion="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
 									paginate_discussion += '<li><a href="#" onclick=showPage("'+ intial_discussion + '","discussion"); return false;>' + intial_discussion + '</a></li>';
 								}
