@@ -370,8 +370,10 @@ function showPage(page,type,navigate)
 $('.firstdiv').css('background-color', '#FFFFFF');
 $(".content").hide();
  //$(".maindiv").hide();
+ console.log("Navigate type:::"+navigate);
  if(navigate="next")
  {
+ 
  page=page+1;
  }
  if(navigate="previous")
