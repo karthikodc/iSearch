@@ -70,7 +70,8 @@
 	 background-position: -80px -16px;
 }
 .jive-icon-previous-disabled {
-     background-position: -96px -13746px;
+    /* background-position: -96px -13746px;*/
+	  background-position: -16px -80px;
 }
 .jive-icon-next {
      background-position: -49px -1374px;
