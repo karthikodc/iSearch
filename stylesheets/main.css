@@ -66,7 +66,8 @@
      background-position: -80px -16px;
 }
 .jive-icon-previous {
-     background-position: -80px -1374px;
+     /*background-position: -80px -1374px;*/
+	 background-position: -80px -16px;
 }
 .jive-icon-previous-disabled {
      background-position: -96px -13746px;
