@@ -797,7 +797,7 @@ function search() {
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
-			paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next"></span>'
+			paginate_discussion='<span class="jive-icon-med jive-icon-document"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next"></span>'
 			discussion +='<br><div class="pagingControls">'+paginate_discussion+'</div>';
 			
 			$("#tabs-2").html(discussion);
