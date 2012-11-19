@@ -535,7 +535,7 @@ function search() {
 					 }
 					 else
 					 {
-					  typeImage ='<span class="jive-icon-med jive-icon-discussion-question"></span>';
+					  typeImage ='<span class="jive-icon-med jive-icon-discussion-ques"></span>';
 					  }						
 					}
 							
