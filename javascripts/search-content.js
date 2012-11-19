@@ -365,11 +365,19 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page,type)
+function showPage(page,type,navigate)
 {
 $('.firstdiv').css('background-color', '#FFFFFF');
 $(".content").hide();
  //$(".maindiv").hide();
+ if(navigate="next")
+ {
+ page=page+1;
+ }
+ if(navigate="previous")
+ {
+ page=page-1;
+ }
 if(type=="discussion")
 {
 var totalPage=total_page_discussion;
@@ -797,7 +805,7 @@ function search() {
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
-			paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next"></span>'
+			paginate_discussion='<a href="showPage(1,\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:1/'+total_page_discussion+'<a href="showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
 			discussion +='<br><div class="pagingControls">'+paginate_discussion+'</div>';
 			
 			$("#tabs-2").html(discussion);
