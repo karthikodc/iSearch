@@ -375,6 +375,7 @@ $(".content").hide();
  {
  
  page=page+1;
+ console.log("Page counter value:::"+page);
  }
  if(navigate="previous")
  {
