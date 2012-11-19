@@ -66,18 +66,18 @@
      background-position: -80px -16px;
 }
 .jive-icon-previous {
-     /*background-position: -80px -1374px;*/
-	 background-position: -80px -16px;
+     background-position: -80px -1360px;
+	 
 }
 .jive-icon-previous-disabled {
     background-position: -96px -1360px;
 	  
 }
 .jive-icon-next {
-     background-position: -49px -1374px;
+     background-position: -49px -1360px;
 }
 .jive-icon-next-disabled {
-     background-position: -64px -1374px;
+     background-position: -64px -1360px;
 }
 .jive-icon-discussion-correct {
      background-position: -208px -16px;
