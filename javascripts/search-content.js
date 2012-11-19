@@ -370,17 +370,17 @@ function showPage(page,type,navigate)
 $('.firstdiv').css('background-color', '#FFFFFF');
 $(".content").hide();
  //$(".maindiv").hide();
- var page=0;
+ var pagecounter=0;
  console.log("Navigate type:::"+navigate);
  if(navigate="next")
  {
  
- page=page+1;
+ pagecounter=page+1;
  console.log("Page counter value:::"+page);
  }
  if(navigate="previous")
  {
- page=page-1;
+ pagecounter=page-1;
  }
 if(type=="discussion")
 {
@@ -399,10 +399,10 @@ else
 var totalPage=total_page_all;
 }
 
- var selectedPage=".div_page_"+type+"_"+page;
+ var selectedPage=".div_page_"+type+"_"+pagecounter;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
-      if(i==page)
+      if(i==pagecounter)
 	  {
 		console.log("Inside show if" +i);
 		$('.div_page_'+type+'_'+i).css('display', 'block');
