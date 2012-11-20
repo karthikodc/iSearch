@@ -852,7 +852,8 @@ function search() {
 			discussion +='<br><div class="pagingControls" id="discussion_pagingControls">'+paginate_discussion+'</div>';
 			
 			$("#tabs-2").html(discussion);
-			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';
+			paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<a href="#" onClick="return showPage(1,\'document\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			document +='<br><div class="pagingControls" id="document_pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-3").html(document);
 			post +='<br><div class="pagingControls">Page:'+paginate_blog+'</div>';
