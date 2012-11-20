@@ -396,7 +396,7 @@ if(navigate=="next")
  {
 	if(page==total_page_discussion)
 	{
-		$('#'+type+'_pagingControls').removeAttr('href');
+		$('a#'+type+'_pagingControls').removeAttr('href');
 	}else{
 		pagecounter=pagecounter+1;
 		}
@@ -404,7 +404,7 @@ if(navigate=="next")
  }else{
 	if(page<=1)
 	{
-		$('#'+type+'_pagingControls').removeAttr('href');
+		$('a#'+type+'_pagingControls').removeAttr('href');
 	}else {
 	
  	pagecounter=pagecounter-1;
