@@ -436,7 +436,7 @@ if(navigate=="next")
 	var prev=pagecounter;
 	if(naviNextCheck)
 	{
-		attlink='<a href="#"  onClick="return showPage('+prev+',\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
+		attlink='<a href="#"  onClick="return showPage('+prev+',\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
 	}
 	else if(naviPrevCheck)
 	{
