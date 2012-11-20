@@ -842,7 +842,19 @@ function search() {
 			//all +=discussion;
 			//all +="<br>"+document;
 			//all +="<br>"+post;
-			paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<a href="#" onClick="return showPage(1,\'all\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			if(total_page_all==0)
+			{
+				paginate_all='<span > No records found</span>'
+			}
+			else if(total_page_all==1)
+			{
+				paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<span class="jive-icon-med jive-icon-next"></span>'
+			}
+			else
+			{
+				paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<a href="#" onClick="return showPage(1,\'all\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			}
+			
 			all +='<br><div class="pagingControls" id="all_pagingControls">'+paginate_all+'</div>';
 
 			feedbackText = '&nbsp;&nbsp;&nbsp;<button id="notHelpful">Not Helpful</button>&nbsp;&nbsp;&nbsp;';
