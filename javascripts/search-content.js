@@ -842,7 +842,8 @@ function search() {
 			//all +=discussion;
 			//all +="<br>"+document;
 			//all +="<br>"+post;
-			all +='<br><div class="pagingControls">Page:'+paginate_all+'</div>';
+			paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<a href="#" onClick="return showPage(1,\'all\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			all +='<br><div class="pagingControls">'+paginate_all+'</div>';
 
 			feedbackText = '&nbsp;&nbsp;&nbsp;<button id="notHelpful">Not Helpful</button>&nbsp;&nbsp;&nbsp;';
 			// feedbackText+= '<button id="helpful">Helpful</button>';
@@ -855,10 +856,11 @@ function search() {
 			
 			$("#tabs-2").html(discussion);
 			paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<a href="#" onClick="return showPage(1,\'document\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
-			document +='<br><div class="pagingControls" id="document_pagingControls">Page:'+paginate_document+'</div>';
+			document +='<br><div class="pagingControls" id="document_pagingControls">'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-3").html(document);
-			post +='<br><div class="pagingControls">Page:'+paginate_blog+'</div>';
+			paginate_blog='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<a href="#" onClick="return showPage(1,\'blog\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			post +='<br><div class="pagingControls">'+paginate_blog+'</div>';
 			$("#tabs-4").html(post);
             $("#search-info").show();
 			gadgets.window.adjustHeight();
