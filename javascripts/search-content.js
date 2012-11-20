@@ -848,7 +848,7 @@ function search() {
 			}
 			else if(total_page_all==1)
 			{
-				paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<span class="jive-icon-med jive-icon-next"></span>'
+				paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
 			}
 			else
 			{
@@ -869,7 +869,7 @@ function search() {
 			}
 			else if(total_page_discussion==1)
 			{
-				paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next"></span>'
+				paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
 			}
 			else
 			{
@@ -886,7 +886,7 @@ function search() {
 			}
 			else if(total_page_document==1)
 			{
-				paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<span class="jive-icon-med jive-icon-next"></span>'
+				paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
 			}
 			else
 			{
@@ -903,7 +903,7 @@ function search() {
 			}
 			else if(total_page_blog==1)
 			{
-				paginate_blog='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<span class="jive-icon-med jive-icon-next"></span>'
+				paginate_blog='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
 			}
 			else
 			{
