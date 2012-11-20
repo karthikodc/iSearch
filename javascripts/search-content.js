@@ -378,7 +378,7 @@ $(".content").hide();
  {
  
  pagecounter=pagecounter+1;
- console.log("Page counter value:::"+page);
+ console.log("Page counter value:::"+pagecounter);
  }
  if(navigate="previous")
  {
