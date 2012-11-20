@@ -375,7 +375,7 @@ $(".content").hide();
  pagecounter=page;
  console.log("page outside::"+pagecounter);
  console.log("Navigate type:::"+navigate+ " page :::"+page+" type:::"+type);
- if(navigate="next")
+ if(navigate=="next")
  {
  
  pagecounter=pagecounter+1;
