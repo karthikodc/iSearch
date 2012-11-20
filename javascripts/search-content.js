@@ -397,22 +397,19 @@ var totalPage=total_page_all;
 }
 if(navigate=="next")
  {
-	if(page==total_page_discussion)
+	pagecounter=pagecounter+1;
+	if(pagecounter==total_page_discussion)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
 		naviNextCheck=true;
-	}else{
-		pagecounter=pagecounter+1;
-		}
+	}
 		console.log("Page counter value:::"+pagecounter);
  }else{
-	if(page<=1)
+	pagecounter=pagecounter-1;
+	if(pagecounter<=1)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
 		naviPrevCheck=true;
-	}else {
-	
- 	pagecounter=pagecounter-1;
 	}
 	console.log("Page counter value inside previous:::"+pagecounter);
  }
