@@ -408,7 +408,7 @@ getType="getAll";
 if(navigate=="next")
  {
 	pagecounter=pagecounter+1;
-	if(pagecounter==total_page_discussion)
+	if(pagecounter==totalPage)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
 		naviNextCheck=true;
