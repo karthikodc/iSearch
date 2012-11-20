@@ -400,7 +400,7 @@ if(navigate=="next")
 	if(page==total_page_discussion)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
-		navicheck=true;
+		naviNextCheck=true;
 	}else{
 		pagecounter=pagecounter+1;
 		}
@@ -409,7 +409,7 @@ if(navigate=="next")
 	if(page<=1)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
-		navicheck=true;
+		naviPrevCheck=true;
 	}else {
 	
  	pagecounter=pagecounter-1;
