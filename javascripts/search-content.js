@@ -444,15 +444,15 @@ if(navigate=="next")
 	var prev=pagecounter;
 	if(naviNextCheck)
 	{
-		attlink='<a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
+		attlink='<a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+totalPage+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
 	}
 	else if(naviPrevCheck)
 	{
-		attlink='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+		attlink='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:'+pagecounter+'/'+totalPage+'<a href="#" onClick="return showPage('+next+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
 	}
 	else
 	{
-		attlink='<a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+		attlink='<a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+totalPage+'<a href="#" onClick="return showPage('+next+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
 	}
 	
  //$('#'+type+'_pagingControls').html('<div><a href="#" onClick="'return showPage(pagecounter-1,type,\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="'return showPage(pagecounter+1,type,\'next\');"><span class="jive-icon-med jive-icon-next"></span></a></div>' );
