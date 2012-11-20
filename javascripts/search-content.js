@@ -843,7 +843,7 @@ function search() {
 			//all +="<br>"+document;
 			//all +="<br>"+post;
 			paginate_all='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<a href="#" onClick="return showPage(1,\'all\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
-			all +='<br><div class="pagingControls">'+paginate_all+'</div>';
+			all +='<br><div class="pagingControls" id="all_pagingControls">'+paginate_all+'</div>';
 
 			feedbackText = '&nbsp;&nbsp;&nbsp;<button id="notHelpful">Not Helpful</button>&nbsp;&nbsp;&nbsp;';
 			// feedbackText+= '<button id="helpful">Helpful</button>';
