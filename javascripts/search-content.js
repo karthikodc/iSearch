@@ -6,6 +6,8 @@ var getDiscussion="discussion";
 var getDocument="document";
 var getBlog="blog";
 var getAll="all";
+var lastIndex=0;
+var firstIndex=0;
 
 
 var feedbackText = "";
@@ -869,11 +871,12 @@ function search() {
 			}
 			else if(total_page_discussion==1)
 			{
-				paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
+				paginate_discussion='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
 			}
 			else
 			{
-				paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+				lastIndex=total_page_discussion-1;
+				paginate_discussion='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
 			}
 			
 			discussion +='<br><div class="pagingControls" id="discussion_pagingControls">'+paginate_discussion+'</div>';

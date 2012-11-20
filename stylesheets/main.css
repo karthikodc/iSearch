@@ -79,6 +79,18 @@
 .jive-icon-next-disabled {
      background-position: -64px -1360px;
 }
+.jive-icon-first {
+     background-position: -152px -1360px;
+}
+.jive-icon-first-disabled {
+     background-position: -196px -1360px;
+}
+.jive-icon-last {
+     background-position: -176px -1360px;
+}
+.jive-icon-last-disabled {
+     background-position: -220px -1360px;
+}
 .jive-icon-discussion-correct {
      background-position: -208px -16px;
 }
