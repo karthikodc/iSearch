@@ -375,16 +375,7 @@ $(".content").hide();
  pagecounter=page;
  console.log("page outside::"+pagecounter);
  console.log("Navigate type:::"+navigate+ " page :::"+page+" type:::"+type);
- if(navigate=="next")
- {
  
- pagecounter=pagecounter+1;
- console.log("Page counter value:::"+pagecounter);
- }else{
- 
- pagecounter=pagecounter-1;
- console.log("Page counter value inside previous:::"+pagecounter);
- }
 if(type=="discussion")
 {
 var totalPage=total_page_discussion;
@@ -401,6 +392,25 @@ else
 {
 var totalPage=total_page_all;
 }
+if(navigate=="next")
+ {
+	if(page==total_page_discussion)
+	{
+		$('#'+type+'_pagingControls').this.removeAttribute("href");
+	}else{
+		pagecounter=pagecounter+1;
+		}
+		console.log("Page counter value:::"+pagecounter);
+ }else{
+	if(page<=1)
+	{
+		$('#'+type+'_pagingControls').this.removeAttribute("href");
+	}else {
+	
+ 	pagecounter=pagecounter-1;
+	}
+	console.log("Page counter value inside previous:::"+pagecounter);
+ }
 
  console.log("Page counter value before class:::"+pagecounter);
  selectedPage=".div_page_"+type+"_"+pagecounter;
@@ -423,7 +433,7 @@ var totalPage=total_page_all;
 	var next=pagecounter;
 	var prev=pagecounter;
  //$('#'+type+'_pagingControls').html('<div><a href="#" onClick="'return showPage(pagecounter-1,type,\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="'return showPage(pagecounter+1,type,\'next\');"><span class="jive-icon-med jive-icon-next"></span></a></div>' );
-	$('#'+type+'_pagingControls').html('<a href="#"  +'if (prev<=1){'+ onClick="this.removeAttribute("href");"'+} else { '+onClick="return showPage('+prev+',\'discussion\',\'previous\');"'+}+'><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
+	$('#'+type+'_pagingControls').html('<a href="#"  onClick="return showPage('+prev+',\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
 }
 
 
