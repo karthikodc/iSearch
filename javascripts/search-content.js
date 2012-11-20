@@ -385,12 +385,15 @@ $(".content").hide();
  console.log("Navigate type:::"+navigate+ " page :::"+page+" type:::"+type);
  var attlink="";
  var getType="";
+ var firstIndex=0;
+ var lastIndex=0;
  var naviNextCheck=false;
  var naviPrevCheck=false;
 if(type=="discussion")
 {
 totalPage=total_page_discussion;
 getType="getDiscussion";
+lastIndex=total_page_discussion-1;
 }
 else if(type=="document")
 {
@@ -452,7 +455,7 @@ if(navigate=="next")
 	}
 	else if(naviPrevCheck)
 	{
-		attlink='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:'+pagecounter+'/'+totalPage+'<a href="#" onClick="return showPage('+next+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+		attlink='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:'+pagecounter+'/'+totalPage+'<a href="#" onClick="return showPage('+next+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+','+getType+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
 	}
 	else
 	{
