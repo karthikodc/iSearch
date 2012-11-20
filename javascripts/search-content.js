@@ -448,7 +448,7 @@ if(navigate=="next")
 	var prev=pagecounter;
 	if(naviNextCheck)
 	{
-		attlink='<a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-first"></span></a><a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+totalPage+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
+		attlink='<a href="#"  onClick="return showPage(2,'+getType+',\'previous\');"><span class="jive-icon-med jive-icon-first"></span></a><a href="#"  onClick="return showPage('+prev+','+getType+',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+totalPage+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
 	}
 	else if(naviPrevCheck)
 	{
