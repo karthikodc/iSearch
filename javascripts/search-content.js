@@ -420,8 +420,10 @@ var totalPage=total_page_all;
 		 //$('.div_page_'+type+'_'+i).hide();
 	  }
     }
+	var next=pagecounter+1;
+	var prev=pagecounter-1;
  //$('#'+type+'_pagingControls').html('<div><a href="#" onClick="'return showPage(pagecounter-1,type,\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="'return showPage(pagecounter+1,type,\'next\');"><span class="jive-icon-med jive-icon-next"></span></a></div>' );
-	$('#'+type+'_pagingControls').html('<a href="#"  onClick="return showPage('+pagecounter-1+','+type+',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+pagecounter+1+','+type+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
+	$('#'+type+'_pagingControls').html('<a href="#"  onClick="return showPage('+prev+','+type+',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+','+type+',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
 }
 
 
