@@ -375,7 +375,10 @@ $(".content").hide();
  pagecounter=page;
  console.log("page outside::"+pagecounter);
  console.log("Navigate type:::"+navigate+ " page :::"+page+" type:::"+type);
+ var attlink="";
  
+ var naviNextCheck=false;
+ var naviPrevCheck=false;
 if(type=="discussion")
 {
 var totalPage=total_page_discussion;
@@ -397,6 +400,7 @@ if(navigate=="next")
 	if(page==total_page_discussion)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
+		navicheck=true;
 	}else{
 		pagecounter=pagecounter+1;
 		}
@@ -405,6 +409,7 @@ if(navigate=="next")
 	if(page<=1)
 	{
 		$('a#'+type+'_pagingControls').removeAttr('href');
+		navicheck=true;
 	}else {
 	
  	pagecounter=pagecounter-1;
@@ -432,8 +437,21 @@ if(navigate=="next")
     }
 	var next=pagecounter;
 	var prev=pagecounter;
+	if(naviNextCheck)
+	{
+		attlink='<a href="#"  onClick="return showPage('+prev+',\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next-disabled"></span>'
+	}
+	else if(naviPrevCheck)
+	{
+		attlink='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+	}
+	else
+	{
+		attlink='<a href="#"  onClick="return showPage('+prev+',\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+	}
+	
  //$('#'+type+'_pagingControls').html('<div><a href="#" onClick="'return showPage(pagecounter-1,type,\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="'return showPage(pagecounter+1,type,\'next\');"><span class="jive-icon-med jive-icon-next"></span></a></div>' );
-	$('#'+type+'_pagingControls').html('<a href="#"  onClick="return showPage('+prev+',\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
+	$('#'+type+'_pagingControls').html(attlink);
 }
 
 
