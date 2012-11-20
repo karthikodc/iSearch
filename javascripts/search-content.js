@@ -863,15 +863,53 @@ function search() {
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
-			paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			if(total_page_discussion==0)
+			{
+				paginate_discussion='<span > No records found</span>'
+			}
+			else if(total_page_discussion==1)
+			{
+				paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<span class="jive-icon-med jive-icon-next"></span>'
+			}
+			else
+			{
+				paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			}
+			
 			discussion +='<br><div class="pagingControls" id="discussion_pagingControls">'+paginate_discussion+'</div>';
 			
 			$("#tabs-2").html(discussion);
-			paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<a href="#" onClick="return showPage(1,\'document\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			
+			if(total_page_document==0)
+			{
+				paginate_document='<span > No records found</span>'
+			}
+			else if(total_page_document==1)
+			{
+				paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<span class="jive-icon-med jive-icon-next"></span>'
+			}
+			else
+			{
+				paginate_document='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			}
+			
 			document +='<br><div class="pagingControls" id="document_pagingControls">'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-3").html(document);
-			paginate_blog='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<a href="#" onClick="return showPage(1,\'blog\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			
+			if(total_page_blog==0)
+			{
+				paginate_blog='<span > No records found</span>'
+			}
+			else if(total_page_blog==1)
+			{
+				paginate_blog='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<span class="jive-icon-med jive-icon-next"></span>'
+			}
+			else
+			{
+				paginate_blog='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			}
+			
 			post +='<br><div class="pagingControls">'+paginate_blog+'</div>';
 			$("#tabs-4").html(post);
             $("#search-info").show();
