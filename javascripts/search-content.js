@@ -423,7 +423,7 @@ var totalPage=total_page_all;
 	var next=pagecounter;
 	var prev=pagecounter;
  //$('#'+type+'_pagingControls').html('<div><a href="#" onClick="'return showPage(pagecounter-1,type,\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="'return showPage(pagecounter+1,type,\'next\');"><span class="jive-icon-med jive-icon-next"></span></a></div>' );
-	$('#'+type+'_pagingControls').html('<a href="#"  if (prev<=1){ onClick="this.removeAttribute('href');"} else { onClick="return showPage('+prev+',\'discussion\',\'previous\');"}><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
+	$('#'+type+'_pagingControls').html('<a href="#"  +'if (prev<=1){'+ onClick="this.removeAttribute("href");"'+} else { '+onClick="return showPage('+prev+',\'discussion\',\'previous\');"'+}+'><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:'+pagecounter+'/'+total_page_discussion+'<a href="#" onClick="return showPage('+next+',\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>');
 }
 
 
@@ -815,7 +815,7 @@ function search() {
 			console.log("discussion::"+discussion);
 			console.log("discussion_count::"+total_page_discussion);
 			$("#tabs-1").html(all);
-			paginate_discussion='<a href="showPage(1,\'discussion\',\'previous\');"><span class="jive-icon-med jive-icon-previous-disabled"></span></a>Page:1/'+total_page_discussion+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
+			paginate_discussion='<span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_discussion+'<a href="#" onClick="return showPage(1,\'discussion\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a>'
 			discussion +='<br><div class="pagingControls" id="discussion_pagingControls">'+paginate_discussion+'</div>';
 			
 			$("#tabs-2").html(discussion);
