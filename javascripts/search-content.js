@@ -377,6 +377,7 @@ $(".content").hide();
  //$(".maindiv").hide();
  var pagecounter=0;
   var selectedPage="";
+  var totalPage=0;
  pagecounter=page;
  console.log("page outside::"+pagecounter);
  console.log("Navigate type:::"+navigate+ " page :::"+page+" type:::"+type);
@@ -386,22 +387,23 @@ $(".content").hide();
  var naviPrevCheck=false;
 if(type=="discussion")
 {
-var totalPage=total_page_discussion;
+totalPage=total_page_discussion;
 getType="getDiscussion";
 }
 else if(type=="document")
 {
-var totalPage=total_page_document;
+totalPage=total_page_document;
 getType="getDocument";
 }
 else if(type=="blog")
 {
-var totalPage=total_page_blog;
+totalPage=total_page_blog;
 getType="getBlog";
 }
 else
 {
-var totalPage=total_page_all;
+totalPage=total_page_all;
+getType="getAll";
 }
 if(navigate=="next")
  {
