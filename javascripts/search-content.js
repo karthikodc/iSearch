@@ -535,10 +535,10 @@ function search() {
 			var display_document="display:block";
 			var display_blog="display:block";
 			var display_all="display:block";
-			var paginate_discussion='<li><a href="#" onclick="showPage(1,\'discussion\'); return false;">1</a></li>';
-			var paginate_document='<li><a href="#" onclick="showPage(1,\'document\'); return false;">1</a></li>';
-			var paginate_blog='<li><a href="#" onclick="showPage(1,\'blog\'); return false;">1</a></li>';
-			var paginate_all='<li><a href="#" onclick="showPage(1,\'all\'); return false;">1</a></li>';
+			var paginate_discussion="";
+			var paginate_document="";
+			var paginate_blog="";
+			var paginate_all="";
 			var typeImage="";
 			var mainId="";
             $.each(rows, function(index, row) {
@@ -691,8 +691,6 @@ function search() {
 									
 									intial_discussion=intial_discussion+1;
 									display_discussion="display:none";
-									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate_discussion += '<li><a href="#" onclick=showPage("'+ intial_discussion + '","discussion"); return false;>' + intial_discussion + '</a></li>';
 								}
 								else
 								{
@@ -711,13 +709,13 @@ function search() {
 				                discussion +='<span class="jive-icon-med image-button " id="'+discussionID+'"></span>';
                     		    discussion +='</ul>'; 
 					
-				             discussion +='<div class="root1">';  
-                    		discussion +='<ul>';                   
-                    		discussion +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
-				            discussion +='&nbsp;&nbsp<li>Date:'+newDate+'</li>';                    
-                    		discussion +='&nbsp;&nbsp<li>Replies:'+replyCount+'</li>'; 
-                    		discussion +='</ul>';
-				             discussion +='</div>';
+								discussion +='<div class="root1">';  
+								discussion +='<ul>';                   
+								discussion +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+								discussion +='&nbsp;&nbsp<li>Date:'+newDate+'</li>';                    
+								discussion +='&nbsp;&nbsp<li>Replies:'+replyCount+'</li>'; 
+								discussion +='</ul>';
+								discussion +='</div>';
 					
 				                discussion +='<div class="root">';
                                 discussion +='<ul>';                   
@@ -745,8 +743,6 @@ function search() {
 									
 									intial_document=intial_document+1;
 									display_document="display:none";
-									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate_document += '<li><a href="#" onclick=showPage("'+ intial_document + '","document"); return false;>' + intial_document + '</a></li>';
 								}
 								else
 								{
@@ -755,33 +751,33 @@ function search() {
 								var page="page_document_"+intial_document;
 								console.log(page);
 								console.log(paginate_document);
-                    		document +='<div id="div_'+docID+'" class="firstdiv"> ';
-							document +='<div class="div_'+page+'" style="'+display_document+'">';	
-							document +='<ul>';
-                    		document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
-                    		document +='</ul>';
-                    		document +='<ul>';
-							document +='<span class="jive-icon-med image-button" id="DOC-'+docID+'" ></span>';
-                    		document +='</ul>';
+								document +='<div id="div_'+docID+'" class="firstdiv"> ';
+								document +='<div class="div_'+page+'" style="'+display_document+'">';	
+								document +='<ul>';
+								document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
+								document +='</ul>';
+								document +='<ul>';
+								document +='<span class="jive-icon-med image-button" id="DOC-'+docID+'" ></span>';
+								document +='</ul>';
                     
-							document +='<div class="root1">'; 
-                    		document +='<ul>';
-							document +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
-							document +='<li>Date:'+newDate+'</li>';                  
-                    		document +='<li>Replies:'+replyCount+'</li>';
-							document +='</ul>';
-                    		document +='</div>';
+								document +='<div class="root1">'; 
+								document +='<ul>';
+								document +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+								document +='<li>Date:'+newDate+'</li>';                  
+								document +='<li>Replies:'+replyCount+'</li>';
+								document +='</ul>';
+								document +='</div>';
 					
-							document +='<div class="root">';
-                    		document +='<ul>';                    
-                    		document +='<div class="align">'+contentSummary+'</div>';                   
-                    		document +='</ul>';
-							document +='</div>';
+								document +='<div class="root">';
+								document +='<ul>';                    
+								document +='<div class="align">'+contentSummary+'</div>';                   
+								document +='</ul>';
+								document +='</div>';
                                        
-                    		document +='</div>';
-							document +='</div>';
-                    		//document +='<br>';
-							loop_check_document=loop_check_document+1
+								document +='</div>';
+								document +='</div>';
+								//document +='<br>';
+								loop_check_document=loop_check_document+1
                       
                         }
 						total_page_document = intial_document;
@@ -797,8 +793,7 @@ function search() {
 									
 									intial_blog=intial_blog+1;
 									display_blog="display:none";
-									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate_blog += '<li><a href="#" onclick=showPage("'+ intial_blog + '","blog"); return false;>' + intial_blog + '</a></li>';
+									
 								}
 								else
 								{
@@ -806,33 +801,33 @@ function search() {
 								}
 								var page="page_blog_"+intial_blog;
 							
-							post +='<div id="div_'+postId+'" class="firstdiv"> ';
+								post +='<div id="div_'+postId+'" class="firstdiv"> ';
 								post +='<div class="div_'+page+'" style="'+display_blog+'">';	
-							post +='<ul>';
-							post +='<span class="jive-icon-med jive-icon-blog"></span><li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
-							post +='</ul>';
-							post +='<ul>';
-							post +='<span class="jive-icon-med image-button" id="post-'+postId+'/'+blogId+'" ></span>';                            
-							post +='</ul>';
+								post +='<ul>';
+								post +='<span class="jive-icon-med jive-icon-blog"></span><li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
+								post +='</ul>';
+								post +='<ul>';
+								post +='<span class="jive-icon-med image-button" id="post-'+postId+'/'+blogId+'" ></span>';                            
+								post +='</ul>';
                     
-							post +='<div class="root1">'; 
-							post +='<ul>';
-							post +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
-							post +='<li>Date:'+newDate+'</li>';                  
-							post +='<li>Replies:'+replyCount+'</li>'; 
-							post +='</ul>';
-							post +='</div>';
+								post +='<div class="root1">'; 
+								post +='<ul>';
+								post +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+								post +='<li>Date:'+newDate+'</li>';                  
+								post +='<li>Replies:'+replyCount+'</li>'; 
+								post +='</ul>';
+								post +='</div>';
 					
-							post +='<div class="root">';    
-							post +='<ul>';  
-							post +='<div class="align">'+contentSummary+'</div>';  
-							post +='</ul>';
-							post +='</div>'; 
+								post +='<div class="root">';    
+								post +='<ul>';  
+								post +='<div class="align">'+contentSummary+'</div>';  
+								post +='</ul>';
+								post +='</div>'; 
                                     
-							post +='</div>';  
-							post +='</div>';  
-							//post +='<br>';		
-							loop_check_blog=loop_check_blog+1;							
+								post +='</div>';  
+								post +='</div>';  
+								//post +='<br>';		
+								loop_check_blog=loop_check_blog+1;							
 							             
 					}
 					
