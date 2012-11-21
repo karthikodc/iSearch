@@ -854,12 +854,12 @@ function search() {
 			}
 			else if(total_page_all==1)
 			{
-				paginate_all='<span class="jive-icon-med jive-icon-first-disabled"><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
+				paginate_all='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
 			}
 			else
 			{
 				lastIndex=total_page_all-1;
-				paginate_all='<span class="jive-icon-med jive-icon-first-disabled"><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<a href="#" onClick="return showPage(1,\'all\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'all\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
+				paginate_all='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_all+'<a href="#" onClick="return showPage(1,\'all\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'all\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
 			}
 			
 			all +='<br><div class="pagingControls" id="all_pagingControls">'+paginate_all+'</div>';
@@ -894,12 +894,12 @@ function search() {
 			}
 			else if(total_page_document==1)
 			{
-				paginate_document='<span class="jive-icon-med jive-icon-first-disabled"><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
+				paginate_document='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
 			}
 			else
 			{
 				lastIndex=total_page_document-1;
-				paginate_document='<span class="jive-icon-med jive-icon-first-disabled"><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<a href="#" onClick="return showPage(1,\'document\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'document\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
+				paginate_document='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_document+'<a href="#" onClick="return showPage(1,\'document\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'document\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
 			}
 			
 			document +='<br><div class="pagingControls" id="document_pagingControls">'+paginate_document+'</div>';
@@ -912,12 +912,12 @@ function search() {
 			}
 			else if(total_page_blog==1)
 			{
-				paginate_blog='<span class="jive-icon-med jive-icon-first-disabled"><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
+				paginate_blog='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<span class="jive-icon-med jive-icon-next-disabled"></span><span class="jive-icon-med jive-icon-last-disabled"></span>'
 			}
 			else
 			{
 				lastIndex=total_page_blog-1;
-				paginate_blog='<span class="jive-icon-med jive-icon-first-disabled"><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<a href="#" onClick="return showPage(1,\'blog\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'blog\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
+				paginate_blog='<span class="jive-icon-med jive-icon-first-disabled"></span><span class="jive-icon-med jive-icon-previous-disabled"></span>Page:1/'+total_page_blog+'<a href="#" onClick="return showPage(1,\'blog\',\'next\');"><span class="jive-icon-med jive-icon-next"></span></a><a href="#" onClick="return showPage('+lastIndex+',\'blog\',\'next\');"><span class="jive-icon-med jive-icon-last"></span></a>'
 			}
 			
 			post +='<br><div class="pagingControls">'+paginate_blog+'</div>';
