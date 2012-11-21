@@ -658,7 +658,7 @@ function search() {
 							all +='</div>';
 							all +='</div>';
 							loop_check_all=loop_check_all+1
-							}	//discussion +='<br>';
+						}	//discussion +='<br>';
 					
                         if(row.type=="discussion"){
 						
@@ -667,18 +667,15 @@ function search() {
 								var discussionImage="";
 								if(isQuestion)
 								{
-								if(isAnswered != 0){
-								discussionImage +='<span class="jive-icon-med jive-icon-discussion-correct"></span>';
-												
-								 }
-								 else
-								 {
-								  discussionImage +='<span class="jive-icon-med jive-icon-discussion-question"></span>';
-								  }						
+									if(isAnswered != 0){
+									discussionImage +='<span class="jive-icon-med jive-icon-discussion-correct"></span>';
+													
+									}
+									 else{
+									  discussionImage +='<span class="jive-icon-med jive-icon-discussion-question"></span>';
+									}						
 								}
-										
-									 else
-								{
+								else{
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
 								
@@ -698,11 +695,10 @@ function search() {
 								}
 								var page="page_discussion_"+intial_discussion;
 								console.log(page);
-								console.log(paginate_discussion);
-								
+																
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
 								discussion +='<div class="div_'+page+'" style="'+display_discussion+'">';								
-								  discussion +='<ul>';			
+								discussion +='<ul>';			
 				                discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
                                 discussion +='</ul>';
                                 discussion +='<ul>';
@@ -750,7 +746,7 @@ function search() {
 								}
 								var page="page_document_"+intial_document;
 								console.log(page);
-								console.log(paginate_document);
+								
 								document +='<div id="div_'+docID+'" class="firstdiv"> ';
 								document +='<div class="div_'+page+'" style="'+display_document+'">';	
 								document +='<ul>';
@@ -787,7 +783,7 @@ function search() {
 							var blogSummaryId=row.blogSummary.resources.self.ref;
 							var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
 							var postId = (postDetailsId.substring(postDetailsId.lastIndexOf("/"))).substr(1);
-							if((loop_check_blog>=items_per_page)&& (loop_check_blog%items_per_page==0))
+								if((loop_check_blog>=items_per_page)&& (loop_check_blog%items_per_page==0))
 								{
 									console.log("Inside If value ");
 									
