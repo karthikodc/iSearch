@@ -479,7 +479,7 @@ function search() {
     gadgets.window.adjustHeight();
 	var html = "";
     var params = {
-        limit : 500,
+        limit : 10000,
         query : $("#query").val(),
         //sort : $("#sort-type").val(),
        // sortOrder : $("#sort-order").val()
