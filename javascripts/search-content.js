@@ -632,7 +632,7 @@ function search() {
 					}
 					var page="page_all_"+intial_all;
 				
-						if(row.type!="update"){
+						if(row.type=="discussion"||row.type=="document"||row.type=="post"){
 							all +='<div id="alldiv_'+allId+'" class="firstdiv" >'; 
 							all +='<div class="div_'+page+'" style="'+display_all+'">';	
 							all +='<ul>';			
